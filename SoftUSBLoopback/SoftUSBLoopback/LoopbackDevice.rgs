@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {DD8BA419-6F8F-4CCD-B8EC-6944619A1908} = s 'LoopbackDevice Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			TypeLib = s '{6E43376B-7905-4116-B0DE-F8D3B9C0A304}'
+			Version = s '1.0'
+		}
+	}
+}

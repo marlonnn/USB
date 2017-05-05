@@ -1,0 +1,43 @@
+// SoftUSBLoopback.idl : IDL source for SoftUSBLoopback
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (SoftUSBLoopback.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(AED61646-4084-46C1-A062-2DA719A6FA9D),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ILoopbackDevice : IDispatch{
+};
+[
+	uuid(6E43376B-7905-4116-B0DE-F8D3B9C0A304),
+	version(1.0),
+]
+library SoftUSBLoopbackLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(1D152D56-9FAE-4C5D-B4C5-103EEEC446D6)		
+	]
+	dispinterface _ILoopbackDeviceEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(DD8BA419-6F8F-4CCD-B8EC-6944619A1908)		
+	]
+	coclass LoopbackDevice
+	{
+		[default] interface ILoopbackDevice;
+		[default, source] dispinterface _ILoopbackDeviceEvents;
+	};
+};
+
